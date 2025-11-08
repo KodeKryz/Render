@@ -1,2 +1,5 @@
-django
+Django
 gunicorn
+whitenoise
+psycopg2
+python-dotenv
