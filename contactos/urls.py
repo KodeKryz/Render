@@ -10,7 +10,7 @@ router.register(r"contactos", views.ContactoViewSet)
 # app_name = 'contactos'
 
 urlpatterns = [
-    path("", include(router.urls)),
+    path("api", include(router.urls)),
     path("api-auth/", include("rest_framework.urls", namespace="rest_framework")),
     path('', views.lista_contactos, name='lista_contactos'),
     path('agregar/', views.agregar_contacto, name='agregar_contacto'),
