@@ -99,6 +99,7 @@ WSGI_APPLICATION = 'ContactosPersonales.wsgi.application'
 #    }
 #}
 # Usar PostgreSQL si hay variables de entorno; en caso contrario usar SQLite (fallback)
+
 if os.getenv("db_name"):
     DATABASES = {
         'default': {
