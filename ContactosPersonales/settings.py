@@ -14,6 +14,7 @@ from pathlib import Path
 import psycopg2
 from dotenv import load_dotenv
 import os
+from datetime import timedelta
 
 load_dotenv()
 
@@ -46,13 +47,17 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'contactos',
-    'rest_framework'
+    'rest_framework',
+    'rest_framework.authtoken',
 ]
 
-#REST_FRAMEWORK = {
-#    'DEFAULT_PERMISSION_CLASSES': "rest_framework.pagination.PageNumberPagination",
-#    'PAGE_SIZE': 10,
-#}
+REST_FRAMEWORK = {
+    'DEFAULT_PERMISSION_CLASSES': "rest_framework.pagination.PageNumberPagination",
+    'PAGE_SIZE': 10,
+    "ACCESS_TOKEN_LIFETIME": timedelta(minutes=15),
+    "REFRESH_TOKEN_LIFETIME": timedelta(days=1),
+    "AUTH_HEADER_TYPES": ("Bearer",)
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
